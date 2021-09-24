@@ -1,0 +1,127 @@
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+    <title>保定学院-学生工作服务平台</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      #pass {
+        width: 150px;
+        bottom: -30px;
+        right: 0;
+      }
+
+      #mask {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(34, 34, 34, 0.3);
+        color: red;
+        font-size: 12px;
+        display: none;
+      }
+      #mask .contain {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 80%;
+        background-color: #fff;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+      }
+      #mask .shoukuanma {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        margin-bottom: 15px;
+      }
+      #mask p {
+        margin: 5px !important;
+        padding: 0 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="form-container m-auto p-5">
+      <header class="title"><h3 class="text-center pb-4">请个假小条条</h3></header>
+      <div class="row text-left">
+        <div class="col-md-6 pb-3">
+          <label class="form-label" for="xuehao">学号</label>
+          <input type="text" class="form-control" id="xuehao" placeholder="请输入学号" />
+        </div>
+        <div class="col-md-6 pb-3">
+          <label class="form-label" for="xingming">姓名</label>
+          <input type="text" class="form-control" id="xingming" placeholder="请输入姓名" />
+        </div>
+        <div class="col-md-6 pb-3">
+          <label class="form-label" for="banji">班级</label>
+          <input type="text" class="form-control" id="banji" placeholder="请输入班级" />
+        </div>
+        <div class="col-md-6 pb-3">
+          <label class="form-label" for="xingbie">性别</label>
+          <input type="text" class="form-control" id="xingbie" placeholder="请输入性别" />
+        
+      </div>
+
+      <button id="js-form-submit" type="submit" class="btn btn-primary col-md-4 my-3">生成</button>
+    </section>
+    <div id="mask">
+      <div class="contain pb-3 text-center">
+        <div class="shoukuanma">
+          <img class="w-100" src="./imgs/shoukuan.jpg" alt="" />
+        </div>
+        <p>因为网站运营需要一定的钱，</p>
+        <p>所以希望大家每次使用时可以支持支持！</p>
+        <p>(自愿的哈！)</p>
+        <div class="close mt-2">
+          <svg
+            t="1621668983360"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2349"
+            width="30"
+            height="30"
+          >
+            <path
+              d="M512 85.333333C276.48 85.333333 85.333333 276.48 85.333333 512S276.48 938.666667 512 938.666667 938.666667 747.52 938.666667 512 747.52 85.333333 512 85.333333z m136.533333 531.342223c11.377778 11.377778 11.377778 29.582222 0 39.822222-5.688889 5.688889-12.515556 7.964444-20.48 7.964444s-14.791111-2.275556-20.48-7.964444L512 559.786667l-96.711111 96.711111c-5.688889 5.688889-12.515556 7.964444-20.48 7.964444s-14.791111-2.275556-20.48-7.964444c-11.377778-11.377778-11.377778-29.582222 0-39.822222l96.711111-96.711112-104.675556-104.675555c-11.377778-11.377778-11.377778-29.582222 0-39.822222 11.377778-11.377778 29.582222-11.377778 39.822223 0l104.675555 104.675555 104.675556-104.675555c11.377778-11.377778 29.582222-11.377778 39.822222 0 11.377778 11.377778 11.377778 29.582222 0 39.822222l-104.675556 104.675555 97.848889 96.711112z"
+              p-id="2350"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script>
+      $(() => {
+        $('.close').click(() => {
+          $('#mask').css('display', 'none');
+        });
+        $('#js-form-submit').on('click', () => {
+          var formData = new Object();
+          formData.xingming = $('#xingming').val();
+          formData.xuehao = $('#xuehao').val();
+          formData.banji = $('#banji').val();
+          formData.xingbie = $('#xingbie').val();
+          formData.leibie = $('#leibie').val();
+          formData.kaishi = $('#kaishi').val();
+          formData.jieshu = $('#jieshu').val();
+          formData.lixiao = $('#lixiao').val();
+          formData.nowTime = new Date();
+          localStorage.setItem('formData', JSON.stringify(formData));
+          window.location.href = 'result.html';
+        });
+      });
+    </script>
+    
+  </body>
+</html>
