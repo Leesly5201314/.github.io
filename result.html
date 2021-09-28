@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
@@ -47,7 +48,6 @@
       #qrcode-contain {
         padding: 10px 0 20px;
         font-size: 18px;
-        text-align:center
       }
       #jym{
         font-size:40px;
@@ -91,7 +91,6 @@
         margin: 5px !important;
         padding: 0 15px;
       }
-      
     </style>
   </head>
   <body>
@@ -117,21 +116,44 @@
           <div class="td-left col-3">班级</div>
           <div class="col-5" id="banji"></div>
         </div>
+        
+        
+        
         <div class="row none-border">
           <div class="td-left col-4">请假码</div>
           <div></div>
         </div>
         <div id="qrcode-contain" class="text-center">
           <div id="qrcode"></div>
-          <span id="date" class="d-block mt-2"></span> 
+          <span id="date" class="d-block mt-3"></span>
           <div id="jym" class>4354</div> 
-          
-          
         </div>
-        
       </div>
     </div>
-    
+    <div id="mask">
+      <div class="contain pb-3 text-center">
+        <div class="shoukuanma">
+          <img class="w-100" src="./imgs/shoukuan.jpg" alt="" />
+        </div>
+        <p>因为网站运营需要一定的钱，</p>
+        <p>所以希望大家每次使用时可以支持支持！</p>
+        <p>(自愿的哈！)</p>
+        <div class="close mt-2">
+          <svg
+            t="1621668983360"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2349"
+            width="30"
+            height="30"
+          >
+            <path
+              d="M512 85.333333C276.48 85.333333 85.333333 276.48 85.333333 512S276.48 938.666667 512 938.666667 938.666667 747.52 938.666667 512 747.52 85.333333 512 85.333333z m136.533333 531.342223c11.377778 11.377778 11.377778 29.582222 0 39.822222-5.688889 5.688889-12.515556 7.964444-20.48 7.964444s-14.791111-2.275556-20.48-7.964444L512 559.786667l-96.711111 96.711111c-5.688889 5.688889-12.515556 7.964444-20.48 7.964444s-14.791111-2.275556-20.48-7.964444c-11.377778-11.377778-11.377778-29.582222 0-39.822222l96.711111-96.711112-104.675556-104.675555c-11.377778-11.377778-11.377778-29.582222 0-39.822222 11.377778-11.377778 29.582222-11.377778 39.822223 0l104.675555 104.675555 104.675556-104.675555c11.377778-11.377778 29.582222-11.377778 39.822222 0 11.377778 11.377778 11.377778 29.582222 0 39.822222l-104.675556 104.675555 97.848889 96.711112z"
+              p-id="2350"
+            ></path>
+          </svg>
         </div>
       </div>
     </div>
@@ -205,6 +227,6 @@
         }
       });
     </script>
-	  
+	 
   </body>
 </html>
